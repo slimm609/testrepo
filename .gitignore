@@ -1,0 +1,14 @@
+bin/**
+
+# python files
+**/venv
+**/__pycache__
+**/.config
+**/.cache
+**/dist
+**/*.pyc
+**.pytest_cache
+
+# Mac and IDE stuff
+**/.DS_Store
+.vscode/*
