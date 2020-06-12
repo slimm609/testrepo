@@ -1,0 +1,8 @@
+apiVersion: skaffold/v2alpha4
+kind: Config
+metadata:
+  name: nginx
+deploy:
+  kustomize:
+    paths:
+    - ingress 
