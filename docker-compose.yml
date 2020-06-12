@@ -5,7 +5,7 @@ services:
   app:
     build:
       context: ./app
-    image: briandavis/test_app:latest
+    image: briandavis/pyapp:latest
     ports:
       - "8000:8000"
     networks:
@@ -14,5 +14,5 @@ services:
   unittests:
     build:
       context: ./app
-    image:  briandavis/test_app:latest
+    image:  briandavis/pyapp:latest
     command: [ "pytest", "/app/tests.py" ]
