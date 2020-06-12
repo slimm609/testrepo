@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  app:
+    build:
+      context: ./app
+    image: briandavis/test_app:latest
+    ports:
+      - "8000:8000"
+    networks:
+      default:
+
+  unittests:
+    build:
+      context: ./app
+    image:  briandavis/test_app:latest
+    command: [ "pytest", "/app/tests.py" ]

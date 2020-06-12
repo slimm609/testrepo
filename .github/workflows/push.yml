@@ -1,0 +1,12 @@
+name: python_unit_tests
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run unit tests
+        run: docker-compose run unittests
