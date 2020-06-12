@@ -1,0 +1,17 @@
+kind: Ingress
+apiVersion: extensions/v1
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  labels:
+    app: pyapp
+  name: pyapp
+spec:
+  rules:
+  - host: app.localtest.me
+    http:
+      paths:
+      - backend:
+          serviceName: pyapp
+          servicePort: 8000
+        path: /

@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pyapp
+  labels:
+    app: pyapp
+spec:
+  selector:
+    app: pyapp
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000

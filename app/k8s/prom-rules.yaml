@@ -1,0 +1,19 @@
+kind: ServiceMonitor
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: pyapp-servicemonitor
+  labels:
+    release: prometheus-operator
+    app: pyapp
+spec:
+  selector:
+    matchLabels:
+      app: pyapp
+  namespaceSelector:
+    matchNames:
+    - pyapp
+  endpoints:
+  - interval: 5s
+    honorLabels: true
+    port: http
+    path: /metrics

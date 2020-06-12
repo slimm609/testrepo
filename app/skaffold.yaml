@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: prometheus
+build:
+  artifacts:
+  - image: briandavis/pyapp
+    context: .
+    docker:
+      dockerfile: Dockerfile
+  tagPolicy:
+    sha256: {}
+  local:
+    push: false
+deploy:
+  kustomize:
+    paths:
+    - k8s
