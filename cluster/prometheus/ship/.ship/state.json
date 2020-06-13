@@ -1,0 +1,64 @@
+{
+  "v1": {
+    "config": null,
+    "releaseName": "prometheus-operator",
+    "namespace": "monitoring",
+    "kustomize": {
+      "overlays": {
+        "ship": {
+          "excludedBases": [
+            "/charts/grafana/templates/tests/test-configmap.yaml",
+            "/charts/grafana/templates/tests/test-podsecuritypolicy.yaml",
+            "/charts/grafana/templates/tests/test-serviceaccount.yaml",
+            "/charts/grafana/templates/tests/test.yaml",
+            "/charts/grafana/templates/tests/test-rolebinding.yaml",
+            "/charts/grafana/templates/tests/test-role.yaml"
+          ]
+        }
+      }
+    },
+    "upstream": "https://github.com/slimm609/charts/tree/master/stable/prometheus-operator",
+    "metadata": {
+      "applicationType": "helm",
+      "sequence": 0,
+      "icon": "https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png",
+      "name": "prometheus-operator",
+      "releaseNotes": "    [stable/prometheus-operator] Remove Duplicate Annotations from CRDs (#20544)\n\n    * remove duplicate CRDs from annotations on prometheus-operator.\n\n    Signed-off-by: Brian Davis \u003cslimm609@gmail.com\u003e\n\nSigned-off-by: Brian Davis \u003cbrian.davis@ciphertrace.com\u003e",
+      "version": "8.8.0",
+      "license": {
+        "id": "",
+        "assignee": "",
+        "createdAt": "0001-01-01T00:00:00Z",
+        "expiresAt": "0001-01-01T00:00:00Z",
+        "type": ""
+      }
+    },
+    "shipVersion": {
+      "version": "0.52.0",
+      "git": "813a93f",
+      "buildTime": "2019-10-19T00:30:53Z",
+      "dependencies": {
+        "helm": "v2.14.1",
+        "kustomize": "v2.0.3",
+        "terraform": "v0.11.14"
+      },
+      "go": {
+        "version": "go1.13.1",
+        "compiler": "gc",
+        "os": "darwin",
+        "arch": "amd64"
+      }
+    },
+    "contentSHA": "eaa972ababeb1987b607fbd32a39b9c7974a44902c4021d47731b85914d4cd1f",
+    "lifecycle": {
+      "stepsCompleted": {
+        "intro": true,
+        "kustomize": true,
+        "kustomize-intro": true,
+        "outro": true,
+        "render": true,
+        "values": true
+      }
+    }
+  }
+}

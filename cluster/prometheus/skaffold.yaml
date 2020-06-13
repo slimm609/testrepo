@@ -1,0 +1,8 @@
+apiVersion: skaffold/v2alpha4
+kind: Config
+metadata:
+  name: prometheus
+deploy:
+  kustomize:
+    paths:
+    - base

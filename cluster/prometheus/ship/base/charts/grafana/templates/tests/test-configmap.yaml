@@ -1,0 +1,21 @@
+---
+# Source: prometheus-operator/charts/grafana/templates/tests/test-configmap.yaml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-operator-grafana-test
+  namespace: monitoring
+  labels:
+    app: prometheus-operator-grafana
+    chart: "grafana-4.3.2"
+    heritage: "Tiller"
+    release: "prometheus-operator"
+data:
+  run.sh: |-
+    @test "Test Health" {
+      url="http://prometheus-operator-grafana/api/health"
+
+      code=$(curl -s -o /dev/null -I -w "%{http_code}" $url)
+      [ "$code" == "200" ]
+    }

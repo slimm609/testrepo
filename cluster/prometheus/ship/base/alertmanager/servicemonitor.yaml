@@ -1,0 +1,25 @@
+---
+# Source: prometheus-operator/templates/alertmanager/servicemonitor.yaml
+
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prometheus-operator-alertmanager
+  namespace: monitoring
+  labels:
+    app: prometheus-operator-alertmanager
+    
+    chart: prometheus-operator-8.8.0
+    release: "prometheus-operator"
+    heritage: "Tiller"
+spec:
+  selector:
+    matchLabels:
+      app: prometheus-operator-alertmanager
+      release: "prometheus-operator"
+  namespaceSelector:
+    matchNames:
+      - "monitoring"
+  endpoints:
+  - port: web
+    path: "/metrics"

@@ -1,0 +1,22 @@
+---
+# Source: prometheus-operator/templates/prometheus/ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prometheus-operator-prometheus
+  namespace: monitoring
+  labels:
+    app: prometheus-operator-prometheus
+    
+    chart: prometheus-operator-8.8.0
+    release: "prometheus-operator"
+    heritage: "Tiller"
+spec:
+  rules:
+    - host: prometheus.localtest.me
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: prometheus-operator-prometheus
+              servicePort: 9090

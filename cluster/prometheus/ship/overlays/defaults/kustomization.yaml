@@ -1,0 +1,641 @@
+kind: ""
+apiversion: ""
+patchesJson6902:
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: Role
+    namespace: monitoring
+    name: prometheus-operator-alertmanager
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: Role
+    namespace: monitoring
+    name: prometheus-operator-alertmanager
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: RoleBinding
+    name: prometheus-operator-alertmanager
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: RoleBinding
+    name: prometheus-operator-alertmanager
+  path: heritage-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-alertmanager
+  path: chart-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-alertmanager
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: Secret
+    namespace: monitoring
+    name: alertmanager-prometheus-operator-alertmanager
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: Secret
+    namespace: monitoring
+    name: alertmanager-prometheus-operator-alertmanager
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-alertmanager
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-alertmanager
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-alertmanager
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-alertmanager
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-grafana-clusterrole
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-grafana-clusterrole
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-grafana-clusterrolebinding
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-grafana-clusterrolebinding
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ConfigMap
+    namespace: monitoring
+    name: prometheus-operator-grafana-config-dashboards
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ConfigMap
+    namespace: monitoring
+    name: prometheus-operator-grafana-config-dashboards
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ConfigMap
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ConfigMap
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: heritage-patch.json
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: chart-patch.json
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: heritage-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: chart-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1beta1
+    kind: Role
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1beta1
+    kind: Role
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1beta1
+    kind: RoleBinding
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1beta1
+    kind: RoleBinding
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: Secret
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: Secret
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-grafana
+  path: heritage-patch.json
+- target:
+    group: apps
+    version: v1
+    kind: DaemonSet
+    namespace: monitoring
+    name: prometheus-operator-prometheus-node-exporter
+  path: chart-patch.json
+- target:
+    group: apps
+    version: v1
+    kind: DaemonSet
+    namespace: monitoring
+    name: prometheus-operator-prometheus-node-exporter
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: psp-prometheus-operator-prometheus-node-exporter
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: psp-prometheus-operator-prometheus-node-exporter
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: psp-prometheus-operator-prometheus-node-exporter
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: psp-prometheus-operator-prometheus-node-exporter
+  path: heritage-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-prometheus-node-exporter
+  path: chart-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-prometheus-node-exporter
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-prometheus-node-exporter
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-prometheus-node-exporter
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-prometheus-node-exporter
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-prometheus-node-exporter
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ConfigMap
+    namespace: monitoring
+    name: prometheus-operator-grafana-datasource
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ConfigMap
+    namespace: monitoring
+    name: prometheus-operator-grafana-datasource
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-prometheus
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-prometheus
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-prometheus
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-prometheus
+  path: heritage-patch.json
+- target:
+    group: extensions
+    version: v1beta1
+    kind: Ingress
+    namespace: monitoring
+    name: prometheus-operator-prometheus
+  path: chart-patch.json
+- target:
+    group: extensions
+    version: v1beta1
+    kind: Ingress
+    namespace: monitoring
+    name: prometheus-operator-prometheus
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-prometheus-psp
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-prometheus-psp
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-prometheus-psp
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-prometheus-psp
+  path: heritage-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-prometheus
+  path: chart-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-prometheus
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-prometheus
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-prometheus
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-prometheus
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-prometheus
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-admission
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-admission
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: heritage-patch.json
+- target:
+    group: batch
+    version: v1
+    kind: Job
+    namespace: monitoring
+    name: prometheus-operator-admission-create
+  path: chart-patch.json
+- target:
+    group: batch
+    version: v1
+    kind: Job
+    namespace: monitoring
+    name: prometheus-operator-admission-create
+  path: heritage-patch.json
+- target:
+    group: batch
+    version: v1
+    kind: Job
+    namespace: monitoring
+    name: prometheus-operator-admission-patch
+  path: chart-patch.json
+- target:
+    group: batch
+    version: v1
+    kind: Job
+    namespace: monitoring
+    name: prometheus-operator-admission-patch
+  path: heritage-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: chart-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: Role
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: Role
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: RoleBinding
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: RoleBinding
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-admission
+  path: heritage-patch.json
+- target:
+    group: admissionregistration.k8s.io
+    version: v1beta1
+    kind: MutatingWebhookConfiguration
+    name: prometheus-operator-admission
+  path: chart-patch.json
+- target:
+    group: admissionregistration.k8s.io
+    version: v1beta1
+    kind: MutatingWebhookConfiguration
+    name: prometheus-operator-admission
+  path: heritage-patch.json
+- target:
+    group: admissionregistration.k8s.io
+    version: v1beta1
+    kind: ValidatingWebhookConfiguration
+    name: prometheus-operator-admission
+  path: chart-patch.json
+- target:
+    group: admissionregistration.k8s.io
+    version: v1beta1
+    kind: ValidatingWebhookConfiguration
+    name: prometheus-operator-admission
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-operator
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-operator
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-operator
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-operator
+  path: heritage-patch.json
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    namespace: monitoring
+    name: prometheus-operator-operator
+  path: chart-patch.json
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    namespace: monitoring
+    name: prometheus-operator-operator
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-operator-psp
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: prometheus-operator-operator-psp
+  path: heritage-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-operator-psp
+  path: chart-patch.json
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRoleBinding
+    name: prometheus-operator-operator-psp
+  path: heritage-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-operator
+  path: chart-patch.json
+- target:
+    group: policy
+    version: v1beta1
+    kind: PodSecurityPolicy
+    namespace: monitoring
+    name: prometheus-operator-operator
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-operator
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: Service
+    namespace: monitoring
+    name: prometheus-operator-operator
+  path: heritage-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-operator
+  path: chart-patch.json
+- target:
+    version: v1
+    kind: ServiceAccount
+    namespace: monitoring
+    name: prometheus-operator-operator
+  path: heritage-patch.json
+bases:
+- ../../base

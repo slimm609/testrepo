@@ -1,0 +1,55 @@
+---
+# Source: prometheus-operator/templates/prometheus-operator/admission-webhooks/job-patch/psp.yaml
+
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: prometheus-operator-admission
+  namespace: monitoring
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade,post-install,post-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+  labels:
+    app: prometheus-operator-admission
+    
+    chart: prometheus-operator-8.8.0
+    release: "prometheus-operator"
+    heritage: "Tiller"
+spec:
+  privileged: false
+  # Required to prevent escalations to root.
+  # allowPrivilegeEscalation: false
+  # This is redundant with non-root + disallow privilege escalation,
+  # but we can provide it for defense in depth.
+  #requiredDropCapabilities:
+  #  - ALL
+  # Allow core volume types.
+  volumes:
+    - 'configMap'
+    - 'emptyDir'
+    - 'projected'
+    - 'secret'
+    - 'downwardAPI'
+    - 'persistentVolumeClaim'
+  hostNetwork: false
+  hostIPC: false
+  hostPID: false
+  runAsUser:
+    # Permits the container to run with root privileges as well.
+    rule: 'RunAsAny'
+  seLinux:
+    # This policy assumes the nodes are using AppArmor rather than SELinux.
+    rule: 'RunAsAny'
+  supplementalGroups:
+    rule: 'MustRunAs'
+    ranges:
+      # Forbid adding the root group.
+      - min: 0
+        max: 65535
+  fsGroup:
+    rule: 'MustRunAs'
+    ranges:
+      # Forbid adding the root group.
+      - min: 0
+        max: 65535
+  readOnlyRootFilesystem: false
