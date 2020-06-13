@@ -44,7 +44,7 @@ To setup a local kind cluster and deploy the application.
 ```
 It will take about 2-3 minutes to be fully up and running. 
 
-![Demo](/images/termdemo.svg)
+![Demo](/images/term.svg)
 
 Grafana can be reached at http://grafana.localtest.me with a demo login of `admin`/`admin`
 
