@@ -38,6 +38,8 @@ kustomize build . | kubectl apply -f -
 ```
 
 ### Kubernetes kind demo
+* Note: this will only work in linux/mac *
+
 To setup a local kind cluster and deploy the application.
 ```bash
 ./demo.sh up
