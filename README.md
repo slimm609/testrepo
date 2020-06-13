@@ -9,16 +9,16 @@ To build the application locally
 virtualenv -p python3 venv
 source venv/bin/activate
 pip3 install -r app/requirements.txt
-python3 app/main.py
+python3 app/app.py
 ```
 ### Docker
 To build and run with docker or docker-compose, use any of the choices below
 ```bash
 docker build -t briandavis/pyapp:latest app/
-docker run -it briandavis/pyapp:latest
+docker run -p8000:8000 -it briandavis/pyapp:latest
 ```
 ```bash
-docker-compose up
+docker-compose up pyapp
 ```
 ```bash
 docker-compose run -p8000:8000 pyapp
@@ -46,7 +46,7 @@ It will take about 2-3 minutes to be fully up and running.
 
 ![Demo](/images/term.svg)
 
-Grafana can be reached at http://grafana.localtest.me with a demo login of `admin`/`admin`
+Grafana can be reached at http://grafana.localtest.me with a demo login of `admin`/`admin`. Once logged in, there is a HTTP status dashboard
 
 Prometheus can be reached at http://prometheus.localtest.me
 
@@ -62,7 +62,7 @@ pytest app/tests.py
 
 To run tests in docker
 ```bash
-docker run briandavis/pyapp app/tests.py
+docker run briandavis/pyapp pytest tests.py
 ```
 To run tests in docker-compose
 ```bash

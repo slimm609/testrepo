@@ -17,13 +17,16 @@ def shutdown(signal, frame):
 
 # make the request and set the status_code and response time for prometheus
 def response_guage(url):
-    r = requests.get(url)
-    if r.status_code == 200:
-        GAUGE_UP.labels(url).set(1)
-    else:
-        GAUGE_UP.labels(url).set(0)
-    GAUGE_RT.labels(url).set(r.elapsed.total_seconds()*1000)
-    return r.status_code
+    try:
+        r = requests.get(url, timeout=2)
+        if r.status_code == 200:
+            GAUGE_UP.labels(url).set(1)
+        else:
+            GAUGE_UP.labels(url).set(0)
+        GAUGE_RT.labels(url).set(r.elapsed.total_seconds()*1000)
+        return r.status_code
+    except:
+        pass
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, shutdown)
